@@ -8,12 +8,12 @@
     <script src="app.js"></script>
   </head>
   <body>
-    <div ng-controller="TemperaturaController as tempCtrl">
+    <div ng-controller="TemperatureController as tempCtrl">
 
       <h2>Conversor de temperatura</h2>
       Celsius: <input type="text" ng-model="tempCtrl.celsius"> <br>
-      Kelvin: {{tempCtrl.celsiusToKelvin(tempCtrl.celsius)}} <br>
-      Fahrenheit: {{tempCtrl.celsiusToFahrenheit(tempCtrl.celsius)}} <br>
+      Kelvin: {{tempCtrl.celsiusToKelvin()}} <br>
+      Fahrenheit: {{tempCtrl.celsiusToFahrenheit()}} <br>
     </div>
   </body>
 </html>
