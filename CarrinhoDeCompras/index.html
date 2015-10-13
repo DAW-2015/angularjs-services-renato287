@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercício AngularJS: Controllers</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style type="text/css">
+      .main {
+        margin: auto;
+        max-width: 1024px;
+      }
+      input {
+        width: 100%;
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div ng-controller="ComprasController as compCtrl">
+        <h2>Adiciona Produto</h2>
+        Descrição: <input type="text" ng-model="compCtrl.descricao"> <br><br>
+        Preço: <input type="number" ng-model="compCtrl.preco"> <br><br>
+        Quantidade: <input type="number" ng-model="compCtrl.quantidade"> <br><br>
+        <button ng-click="compCtrl.adiciona()">Inserir</button>
+      </div>
+      <hr>
+      <h2>Lista de Compras</h2>
+      <div ng-controller="CheckoutController as checkCtrl">
+      <br>
+        <fieldset ng-repeat="obj in checkCtrl.pegaLista()">
+          <h2>Descrição: {{obj.descricao}}</h2>
+          <p>Preco: {{obj.preco}}</p>
+          <p>Quantidade: {{obj.quantidade}}</p>
+        </fieldset>
+        <p>Valor Total: {{checkCtrl.calculaValorTotal() | currency:'R$'}}</p>
+      </div>
+    </div>
+  </body>
+</html>
