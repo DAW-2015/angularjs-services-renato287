@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercício AngularJS: Controllers</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style type="text/css">
+      .main {
+        margin: auto;
+        max-width: 1024px;
+      }
+      input {
+        width: 100%;
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div ng-controller="LogController as logCtrl">
+        <h2>Adiciona <i>Log</i></h2>
+        Nível: <input type="number" ng-model="logCtrl.nivel"> <br><br>
+        Descrição: <input type="text" ng-model="logCtrl.mensagem"> <br><br>
+        <button ng-click="logCtrl.imprime()">Inserir</button>
+      </div>
+    </div>
+  </body>
+</html>
